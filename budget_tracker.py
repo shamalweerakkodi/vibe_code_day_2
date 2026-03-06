@@ -17,6 +17,9 @@ def main():
         print(f"Total Expenses: ${total_expenses:.2f}")
         print(f"Remaining Balance: ${remaining_balance:.2f}")
 
+        if remaining_balance < 500:
+            print("Warning: Low Funds")
+
     except ValueError:
         print("Invalid input. Please enter numeric values for budget and expenses.")
 
