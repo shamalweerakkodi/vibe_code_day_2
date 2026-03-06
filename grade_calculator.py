@@ -8,7 +8,12 @@ average = (mark1 + mark2 + mark3) / 3
 print(f"\nStudent: {name}")
 print(f"Average: {average:.2f}")
 
-if average >= 40:
-    print("Result: Pass")
+if average >= 75:
+    print("Grade: A")
+elif average >= 60:
+    print("Grade: B")
+elif average >= 40:
+    print("Grade: C")
 else:
     print("Result: Fail")
+
