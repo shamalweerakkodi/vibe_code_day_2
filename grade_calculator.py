@@ -12,17 +12,19 @@ while True:
         continue
 
     average = (m1 + m2 + m3) / 3
-    print(f"Average: {average:.2f}")
 
     if average >= 75:
-        grade = "Grade A"
+        grade = "A"
     elif average >= 60:
-        grade = "Grade B"
+        grade = "B"
     elif average >= 40:
-        grade = "Grade C"
+        grade = "C"
     else:
         grade = "Fail"
 
-    print(f"Result: {grade}\n")
-
-
+    print("-" * 30)
+    print(f"Name   : {name}")
+    print(f"Average: {average:.1f}")
+    print(f"Grade  : {grade}")
+    print("-" * 30)
+    print()
