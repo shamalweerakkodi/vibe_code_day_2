@@ -1,15 +1,26 @@
 def main():
     try:
         # Ask the user for total monthly budget
-        total_budget = float(input("Enter your total monthly budget: "))
+        total_budget_input = input("Enter your total monthly budget: ")
+        total_budget = float(total_budget_input)
 
-        # Ask for 3 expenses
-        expense1 = float(input("Enter expense 1: "))
-        expense2 = float(input("Enter expense 2: "))
-        expense3 = float(input("Enter expense 3: "))
+        total_expenses = 0.0
+        
+        # Enter expenses multiple times
+        while True:
+            expense_input = input("Enter an expense (or type 'done' to finish): ").strip().lower()
+            
+            # Stop entering when they type “done”
+            if expense_input == "done":
+                break
+            
+            try:
+                expense = float(expense_input)
+                total_expenses += expense
+            except ValueError:
+                print("Invalid input. Please enter a numeric value or 'done'.")
 
         # Subtract expenses from total budget
-        total_expenses = expense1 + expense2 + expense3
         remaining_balance = total_budget - total_expenses
 
         # Displays remaining balance
@@ -17,11 +28,12 @@ def main():
         print(f"Total Expenses: ${total_expenses:.2f}")
         print(f"Remaining Balance: ${remaining_balance:.2f}")
 
+        # Warning Message
         if remaining_balance < 500:
             print("Warning: Low Funds")
 
     except ValueError:
-        print("Invalid input. Please enter numeric values for budget and expenses.")
+        print("Invalid input. Please enter a numeric value for the total budget.")
 
 if __name__ == "__main__":
     main()
